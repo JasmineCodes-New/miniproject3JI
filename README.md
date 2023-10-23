@@ -1,4 +1,4 @@
-# miniproject2JI
+# miniproject3JI
 
 ## Description
 This project will be using Flask to create a simple web app called Jasmine's Flask Blog. It makes use of Python, Flask,
