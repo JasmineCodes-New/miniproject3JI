@@ -15,6 +15,7 @@ def register():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
+        full_name = request.form['full_name']  # Get the full name from the form
         db = get_db()
         error = None
 
@@ -22,12 +23,14 @@ def register():
             error = 'Username is required.'
         elif not password:
             error = 'Password is required.'
+        elif not full_name:  # Check if full name is provided
+            error = 'Full name is required.'
 
         if error is None:
             try:
                 db.execute(
-                    "INSERT INTO user (username, password) VALUES (?, ?)",
-                    (username, generate_password_hash(password)),
+                    "INSERT INTO user (username, password, full_name) VALUES (?, ?, ?)",
+                    (username, generate_password_hash(password), full_name),  # Include full name in the query
                 )
                 db.commit()
             except db.IntegrityError:
