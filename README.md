@@ -13,7 +13,12 @@ pip install -r requirements.txt
 ## How To Run
 If you want to run in the terminal, please type the following:
 ```
-python main.py
+flask --app flaskr run --debug
 ``` 
-If you want to run from the main.py file, please click the arrow next to the if statement at the bottom of the file or
-righ-click the name of the main file and click 'Run'.
+
+## Initialize the Database
+```
+flask --app flaskr init-db
+```
+I recommend you run the initialization for the database then the flask run command. If you have trouble 
+with the command, create another virtual environment in your pycharm for this project. 

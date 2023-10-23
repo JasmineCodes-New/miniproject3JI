@@ -7,24 +7,25 @@
 </head>
 <body>
     <nav>
-      <h1>Jasmine's Flaskr Blog</h1>
-      <ul>
-        {% if g.user %}
-          <li><span>{{ g.user['username'] }}</span></li>
-          <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
-        {% else %}
-          <li>
-            <a href="{{ url_for('auth.register') }}" class="btn btn-primary">Register</a>
-          </li>
-          <li>
-            <a href="{{ url_for('auth.login') }}" class="btn btn-success">Log In</a>
-          </li>
-        {% endif %}
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#aboutModal">
-          About Us
-        </button>
-      </ul>
-    </nav>
+  <h1>Jasmine's Flaskr Blog</h1>
+  <ul>
+    {% if g.user %}
+      <li><span>{{ g.user['username'] }}</span></li>
+      <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
+    {% else %}
+      <li>
+        <a href="{{ url_for('auth.register') }}" class="btn btn-primary">Register</a>
+      </li>
+      <li>
+        <a href="{{ url_for('auth.login') }}" class="btn btn-success">Log In</a>
+      </li>
+    {% endif %}
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#aboutModal">
+      About Us
+    </button>
+  </ul>
+</nav>
+
 
     <!-- Modal -->
     <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
